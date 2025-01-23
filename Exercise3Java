@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class ArrayValueCheck {
+    public static void main(String[] args) {
+        // Declare an integer array with five elements
+        int[] arr = {10, 25, 30, 45, 50};
+        // Prompt the user to enter the value to check
+        try ( // Initialize the Scanner to read user input
+                Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter a value to check if it's in the array: ");
+            int valueToCheck = scanner.nextInt();
+            boolean containsValue = false;
+            for (int value : arr) {
+                if (value == valueToCheck) { 
+                    containsValue = true; 
+                    break; 
+                }
+            }   
+            if (containsValue) {
+                System.out.println("The array contains the value: " + valueToCheck);
+            } else {
+                System.out.println("The array does not contain the value: " + valueToCheck);
+            }
+        }
+    }
+}
