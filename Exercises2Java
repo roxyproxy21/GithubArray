@@ -1,0 +1,35 @@
+import java.util.Scanner;
+ public class CreativeArraySum {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Welcome to the Array Sum Calculator!");
+        System.out.println("Please enter 5 integer values.");
+
+        for (int i = 0; i < arr.length; i++) {
+            while (true) {
+                System.out.print("Enter integer value " + (i + 1) + ": ");
+                if (input.hasNextInt()) {
+                    arr[i] = input.nextInt();
+                    break;
+                } else {
+                    System.out.println("That's not a valid integer. Please try again.");
+                    input.next();
+                }
+            }
+        }
+        int sum = calculateSum(arr);
+
+        System.out.println("\nThank you for your input!");
+        System.out.println("The sum of your entered values is: " + sum);
+        input.close();
+    }
+    private static int calculateSum(int[] arr) {
+        int sum = 0;
+        for (int value : arr) {
+            sum += value;
+        }
+        return sum; 
+    }
+}
